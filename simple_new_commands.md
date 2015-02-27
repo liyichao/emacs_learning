@@ -1,7 +1,9 @@
 * `defun`
 
-	(defun other-window-backward (&optional n)                                        		(interactive "P")
-		(other-window (- (prefix-numeric-value n))))
+	
+		(defun other-window-backward (&optional n)
+			(interactive "P")
+			(other-window (- (prefix-numeric-value n))))
 
 * `defalias` 重命名某函数
 
@@ -10,15 +12,15 @@
 * `progn` 用于把多个表达式合并为一个，从而用在如 if 从句里。
 
 		(defun read-only-if-symlink ()
-		(if (file-symlink-p buffer-file-name)
-			(progn (setq buffer-read-only t)		￼	(message "File is a symlink"))))
+			(if (file-symlink-p buffer-file-name)
+				(progn (setq buffer-read-only t)		￼		(message "File is a symlink"))))
 * ` 'read-only-if-symlink)`
 * 匿名函数和 `add-hook`
 		(add-hook 'find-file-hooks 
 				   '(lambda ()
-					(if (file-symlink-p buffer-file-name)
-						(progn
-			￼			(setq buffer-read-only t)
-			￼			(message "File is a symlink"))))
+						(if (file-symlink-p buffer-file-name)
+							(progn
+			￼				(setq buffer-read-only t)
+			￼				(message "File is a symlink"))))
 
 P35
